@@ -1,0 +1,6 @@
+Flask
+Flask-Cors
+pyodbc
+Pillow
+python-dotenv
+dashscope

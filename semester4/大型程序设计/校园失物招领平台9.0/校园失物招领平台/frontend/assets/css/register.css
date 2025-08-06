@@ -1,0 +1,76 @@
+/*
+ * ==========================================================================
+ * 注册页面专用样式 (register.css)
+ * --------------------------------------------------------------------------
+ * 描述: 这个文件包含了所有用于渲染注册页面的样式。
+ * 注意: 其中大部分样式与login.css是共享的，以保证认证流程的视觉统一性。
+ * ==========================================================================
+ */
+
+/* --- 页面基础与背景 --- */
+body {
+    /* 设置一个从左上到右下的渐变背景，与登录页保持一致 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* 使用Flex布局，使内容垂直和水平居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- 认证卡片容器 --- */
+.auth-card {
+    width: 100%;
+    /* 注册页卡片稍宽，以容纳更多输入项 */
+    max-width: 500px;
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* --- 表单内部边距 --- */
+.auth-form {
+    padding: 2.5rem;
+}
+
+/* --- 输入框样式 --- */
+.form-control-lg {
+    border-radius: 8px;
+}
+
+/* --- 主要按钮样式 --- */
+.btn-primary {
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    border: none;
+    transition: transform 0.2s;
+}
+
+/* 按钮悬停效果 */
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 标题样式 --- */
+h2 {
+    font-weight: 700;
+    color: #333;
+}
+
+/* --- 密码输入框容器 --- */
+.password-wrapper {
+    position: relative;
+}
+
+/* --- 密码可见性切换图标 --- */
+.toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+}

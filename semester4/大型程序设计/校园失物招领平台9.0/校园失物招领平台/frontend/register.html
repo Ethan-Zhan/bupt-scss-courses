@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册 - 找到北邮 Found In BUPT</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png" sizes="16x16">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/css/register.css">
+</head>
+<body>
+    <div class="auth-card">
+        <div class="auth-form">
+            <form id="register-form" class="needs-validation" novalidate>
+                 <div class="text-center mb-4">
+                     <i class="fas fa-user-plus fa-3x text-primary"></i>
+                    <h1 class="mt-3">加入 找到北邮</h1>
+                    <h4 class="mt-3">Join Found In BUPT</h4>
+                    <p class="text-muted">快速注册，让失物回家</p>
+                </div>
+
+                <div class="mb-3">
+                    <label for="username" class="form-label">用户名</label>
+                    <input type="text" class="form-control form-control-lg" id="username" name="username" required>
+                     <div class="invalid-feedback">请输入一个用户名。</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">邮箱地址</label>
+                    <input type="email" class="form-control form-control-lg" id="email" name="email" required>
+                    <div class="invalid-feedback">请输入有效的邮箱地址。</div>
+                </div>
+
+                <div class="mb-3 password-wrapper">
+                    <label for="password" class="form-label">密码</label>
+                    <input type="password" class="form-control form-control-lg" id="password" name="password" required minlength="6">
+                    <div class="invalid-feedback">密码长度至少为6个字符。</div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="confirmPassword" class="form-label">确认密码</label>
+                    <input type="password" class="form-control form-control-lg" id="confirmPassword" name="confirmPassword" required>
+                    <div class="invalid-feedback">两次输入的密码不匹配。</div>
+                </div>
+
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">注 册</button>
+                </div>
+
+                <p class="mt-4 text-center text-muted">
+                    已有账户？ <a href="login.html">返回登录</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

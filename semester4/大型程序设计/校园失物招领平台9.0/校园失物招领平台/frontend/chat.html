@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的聊天 - 校园失物招领</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50">
+    <header class="header">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold text-white">我的聊天</h1>
+            <div>
+                <a href="index.html" class="btn btn-secondary">
+                    <i class="fas fa-home mr-2"></i>返回主页
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8 p-4">
+        <div id="chat-list-container" class="chat-list-container">
+            <h2 class="section-title !text-2xl !mb-6">所有对话</h2>
+            <div id="chat-list">
+            </div>
+            <p id="no-chats-msg" class="text-gray-500 hidden text-center mt-4">暂无聊天记录。</p>
+        </div>
+    </main>
+
+    <div id="chat-modal" class="modal-backdrop hidden">
+        <div class="modal-content chat-modal-content">
+            <div id="chat-header" class="chat-header">
+                <h3 id="chat-title">私信对话</h3>
+                <p id="chat-item-desc">正在加载...</p>
+            </div>
+            <div id="chat-messages" class="chat-messages"></div>
+            <form id="chat-form" class="chat-form" enctype="multipart/form-data">
+                <input type="text" id="chat-input" class="input-group-input flex-grow" placeholder="输入消息..." required autocomplete="off">
+                <label for="chat-image-upload" class="btn btn-secondary !py-2.5 cursor-pointer">
+                    <i class="fas fa-image"></i>
+                </label>
+                <input type="file" id="chat-image-upload" name="image" class="hidden" accept="image/*">
+                <button type="submit" class="btn btn-primary">发送</button>
+            </form>
+            <div id="chat-actions" class="mt-4 flex justify-between"></div>
+            <button onclick="closeModal('chat-modal')" class="btn btn-secondary mt-4 w-full">关闭对话</button>
+        </div>
+    </div>
+    
+    <div id="toast" class="toast hidden"></div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

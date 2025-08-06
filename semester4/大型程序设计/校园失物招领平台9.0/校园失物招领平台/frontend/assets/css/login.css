@@ -1,0 +1,85 @@
+/*
+ * ==========================================================================
+ * 登录页面专用样式 (login.css)
+ * --------------------------------------------------------------------------
+ * 描述: 这个文件包含了所有用于渲染登录页面的样式。
+ * ==========================================================================
+ */
+
+/* --- 页面基础与背景 --- */
+body {
+    /* 设置一个从左上到右下的渐变背景，提供美观的视觉效果 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* 使用Flex布局，使内容垂直和水平居中 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 保证body至少和视口一样高 */
+    min-height: 100vh;
+    /* 设置一个通用且优雅的字体系列 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- 认证卡片容器 --- */
+.auth-card {
+    width: 100%;
+    /* 设置卡片的最大宽度，以在较大屏幕上保持良好的可读性 */
+    max-width: 420px;
+    background-color: white;
+    border-radius: 15px; /* 圆角设计 */
+    border: none;
+    /* 添加阴影效果，使卡片有立体感 */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    /* 隐藏溢出的部分，确保圆角生效 */
+    overflow: hidden;
+}
+
+/* --- 表单内部边距 --- */
+.auth-form {
+    padding: 2.5rem; /* 为表单内容提供足够的内边距 */
+}
+
+/* --- 输入框样式 --- */
+.form-control-lg {
+    border-radius: 8px; /* 输入框使用适中的圆角 */
+}
+
+/* --- 主要按钮样式 --- */
+.btn-primary {
+    /* 设置按钮的渐变背景，与页面主题保持一致 */
+    background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    border: none;
+    /* 添加过渡效果，使交互更平滑 */
+    transition: transform 0.2s;
+}
+
+/* 按钮悬停效果 */
+.btn-primary:hover {
+    /* 鼠标悬停时轻微上移，并增强阴影，提供反馈 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- 标题样式 --- */
+h2 {
+    font-weight: 700; /* 加粗字体 */
+    color: #333; /* 深灰色字体，保证可读性 */
+}
+
+/* --- 密码输入框容器 --- */
+.password-wrapper {
+    /* 相对定位，为密码可见性切换图标提供定位参考 */
+    position: relative;
+}
+
+/* --- 密码可见性切换图标 --- */
+.toggle-password {
+    /* 绝对定位，将图标放置在输入框内部的右侧 */
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    /* 通过transform使其垂直居中 */
+    transform: translateY(-50%);
+    cursor: pointer; /* 鼠标悬停时显示为手型指针 */
+    color: #6c757d; /* 设置图标颜色 */
+}

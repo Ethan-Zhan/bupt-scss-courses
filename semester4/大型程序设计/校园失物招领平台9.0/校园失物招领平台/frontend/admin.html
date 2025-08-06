@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理中心</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* 为管理面板提供统一的样式，增强视觉效果 */
+        .admin-panel {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
+        /* 定义表格头部的样式 */
+        .table-header {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #4B5563; /* gray-600 */
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background-color: #F9FAFB; /* gray-50 */
+        }
+        /* 定义表格单元格的样式 */
+        .table-cell {
+            padding: 0.75rem 1rem;
+            border-top: 1px solid #E5E7EB; /* gray-200 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="header">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-2xl font-bold text-white">管理中心</div>
+            <div>
+                 <a href="index.html" class="text-white font-semibold mr-4 hover:underline">返回主页</a>
+                 <button id="logout-btn" class="text-white font-semibold hover:underline">退出登录</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8 p-4">
+        <h1 class="text-3xl font-bold mb-8 text-gray-800">管理员仪表盘</h1>
+
+        <div class="flex flex-col space-y-12">
+            
+            <div class="admin-panel">
+                <h2 class="section-title">用户管理</h2>
+                <div class="overflow-x-auto mt-4">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr>
+                                <th class="table-header">ID</th>
+                                <th class="table-header">用户名</th>
+                                <th class="table-header">角色</th>
+                                <th class="table-header">联系方式</th>
+                                <th class="table-header">注册日期</th>
+                                <th class="table-header">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="users-table-body" class="bg-white">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="admin-panel">
+                <h2 class="section-title">物品管理</h2>
+                <div class="overflow-x-auto mt-4">
+                    <table class="min-w-full">
+                        <thead>
+                            <tr>
+                                <th class="table-header">物品ID</th>
+                                <th class="table-header">名称</th>
+                                <th class="table-header">类型</th>
+                                <th class="table-header">状态</th>
+                                <th class="table-header">发布者ID</th>
+                                <th class="table-header">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="items-table-body" class="bg-white">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="edit-user-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <h3 class="modal-title">编辑用户信息</h3>
+            <form id="edit-user-form">
+                <input type="hidden" id="edit-user-id">
+                <div class="input-group">
+                    <label for="edit-user-username">用户名</label>
+                    <input type="text" id="edit-user-username" class="input-group-input" required>
+                </div>
+                <div class="input-group">
+                    <label for="edit-user-email">邮箱</label>
+                    <input type="email" id="edit-user-email" class="input-group-input" required>
+                </div>
+                <div class="input-group">
+                    <label for="edit-user-role">用户角色</label>
+                    <select id="edit-user-role" class="input-group-input">
+                        <option value="普通用户">普通用户</option>
+                        <option value="志愿者">志愿者</option>
+                        <option value="管理员">管理员</option>
+                    </select>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('edit-user-modal')">取消</button>
+                    <button type="submit" class="btn btn-primary">确认修改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="admin-edit-item-modal" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <h3 class="modal-title">管理员编辑物品</h3>
+            <form id="admin-edit-item-form">
+                <input type="hidden" id="admin-edit-item-id">
+                <div class="input-group">
+                    <label for="admin-edit-item-name">物品名称</label>
+                    <input type="text" id="admin-edit-item-name" name="itemName" class="input-group-input" required>
+                </div>
+                 <div class="input-group">
+                    <label for="admin-edit-item-status">物品状态</label>
+                    <select id="admin-edit-item-status" name="itemStatus" class="input-group-input">
+                        <option value="未找到">未找到</option>
+                        <option value="正在联系中">正在联系中</option>
+                        <option value="已找回">已找回</option>
+                        <option value="已删除">已删除</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="admin-edit-item-desc">特征描述</label>
+                    <textarea id="admin-edit-item-desc" name="description" rows="3" class="input-group-input"></textarea>
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('admin-edit-item-modal')">取消</button>
+                    <button type="submit" class="btn btn-primary">提交更改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
