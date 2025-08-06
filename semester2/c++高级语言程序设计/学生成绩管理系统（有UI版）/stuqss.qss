@@ -1,0 +1,117 @@
+	
+	/* 定义按钮的基本样式 */
+	QPushButton {
+    border: 2px solid #a8d8ea; /* 边框宽度、样式和颜色 */
+    border-radius: 5px; /* 圆角半径 */
+	font-family:"微软雅黑";
+	font-size: 16px; /* 字体大小 */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* 过渡效果 */
+}
+
+
+    /* 按下状态的按钮样式 */
+    QPushButton:pressed {
+        border-color: #393e46; /* 按下时的边框颜色 */
+        border-width: 3px; /* 按下时的边框宽度 */
+        padding: 3px 3px; /* 按下时的内边距 */
+    }
+
+    /* 禁用的按钮样式 */
+    QPushButton:disabled {
+        color: #666666; /* 禁用时的文本颜色 */
+        border-color: #999999; /* 禁用时的边框颜色 */
+    }
+	
+	QWidget {
+	border-radius: 5px; /* 圆角半径 */
+	background-color:#f9f7f7
+	}
+	QMainWindow {
+	border-radius: 5px; /* 圆角半径 */
+	}
+	QLineEdit {
+	border: 2px solid #a8d8ea; /* 边框宽度、样式和颜色 */
+    border-radius: 5px; /* 圆角半径 */
+	font-family:"微软雅黑";
+	font-size: 13px; /* 字体大小 */	
+	}
+	QTableWidget {
+	border: 2px solid #a8d8ea; /* 边框宽度、样式和颜色 */
+    border-radius: 5px; /* 圆角半径 */
+	font-family:"微软雅黑";
+	font-size: 13px; /* 字体大小 */	
+	}
+    
+QSpinBox
+{
+	border: 2px solid #a8d8ea; /* 边框宽度、样式和颜色 */
+    border-radius: 5px; /* 圆角半径 */
+}
+ 
+QSpinBox::up-button,QSpinBox::down-button
+{
+	width:0px;
+}	
+/*表格的一种美化方式*/
+QHeaderView
+{
+    background:transparent;
+}
+
+QHeaderView::section
+{
+    font-size:16px;
+    font-family:"Microsoft YaHei";
+    color:#FFFFFF;
+    background:#3f72af;
+    border: 2px solid #a8d8ea; /* 边框宽度、样式和颜色 */
+    text-align: center; /* 文本居中 */
+    min-height:49px;
+    max-height:49px;
+    margin-left:0px;
+    padding-left:0px;
+}
+
+QTableWidget
+{
+    background:#FFFFFF;
+    border:none;
+	text-align: center; /* 文本居中 */
+    font-size:14px;
+    font-family:"Microsoft YaHei";
+    color:#666666;
+}
+QTableWidget::item
+{
+    border-bottom:1px solid #EEF1F7 ;
+}
+
+QTableWidget::item::selected
+{
+    color:red;
+    background:#EFF4FF;
+}
+
+
+QScrollBar::handle:vertical
+{
+    background: rgba(255,255,255,20%);
+    border: 1px solid grey;
+    border-radius:1px;
+    width: 8px;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
+{
+    background:rgba(255,255,255,10%);
+}
+
+
+QScollBar::add-line:vertical, QScrollBar::sub-line:vertical
+{
+    background:transparent;
+}
+
+
+	
+	

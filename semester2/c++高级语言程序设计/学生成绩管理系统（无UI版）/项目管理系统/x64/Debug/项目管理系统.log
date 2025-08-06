@@ -1,0 +1,6 @@
+﻿  input.cpp
+  student.cpp
+D:\桌面\bupt-scss-courses\semester2\c++高级语言程序设计\学生项目管理系统\项目管理系统\student.cpp(61,6): warning C4101: “flag”: 未引用的局部变量
+  main.cpp
+  正在生成代码...
+  项目管理系统.vcxproj -> D:\桌面\bupt-scss-courses\semester2\c++高级语言程序设计\学生项目管理系统\x64\Debug\项目管理系统.exe
