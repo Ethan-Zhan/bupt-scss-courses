@@ -1,0 +1,11 @@
+string = "eb62f6b9306db575c2d596b1279627a4"
+length = len(string)
+print("Length of the string:", length)
+
+1234567890_ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+
+
+byte_sequence = b"\x10\x2C\x02\xFC\xFB\x3B\x0D\x73\x6E\xBC\xB9\xA7\x6F\x2F"
+ascii_string = byte_sequence.decode('ascii')
+
+print("ASCII字符串:", ascii_string)
